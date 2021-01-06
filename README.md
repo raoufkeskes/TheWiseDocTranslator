@@ -14,8 +14,7 @@ the wise doc translator is a personal project where I aim to build a system that
 
 1) ``` pip install -r requirements.txt ```
 2) PyTorch and its dependencies (torchvision, CUDA, ...) : https://pytorch.org/get-started/locally/
-3) MMLab and its dependencies (NCCL, mmcv, ...) : https://mmediting.readthedocs.io/en/latest/install.html
-
+3) install MMEditing and its dependencies (NCCL, mmcv, ...) : https://mmediting.readthedocs.io/en/latest/install.html
 Current working versions are : 
 - Python = 3.8.5
 - PyTorch = 1.7.1
@@ -25,4 +24,11 @@ Current working versions are :
 
 
 ## Usage
+1) ```git clone https://github.com/raoufkeskes/TheWiseDocTranslator.git```
+2) ```cd TheWiseDocTranslator```
+4) Copy your custom MMediting installation folder into the project : ```cp -Rf ..../mmediting/ ./```
+3) Fix all your parameters on config.yaml 
+   such as : **data_folder**, **results_folder**, **dest_lang**, ... 
+   
+4) run ```python run_translation.py``` 
 

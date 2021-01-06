@@ -1,12 +1,10 @@
-# You could also use relative paths,
-# but I generally avoid them in confing and constant files
+# You could also use relative paths, but I generally avoid them in config files
 
 data_folder: "/home/raoufks/Desktop/Projects/TheWiseDocTranslator/data/"
 
 results_folder: "/home/raoufks/Desktop/Projects/TheWiseDocTranslator/result/"
 
-#use GPU or not,
-# V 1.0 : must be TRUE temporarly since we are using mmedit in our pipeline which requires GPU
+#use GPU or not, Note that it depends on your mmediting installation CPU or GPU
 cuda: True
 
 # Source language (Not necessary because it is inferable but it could enhance the results)
