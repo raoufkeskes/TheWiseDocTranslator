@@ -26,7 +26,7 @@ Current working versions are :
 ## Usage
 1) ```git clone https://github.com/raoufkeskes/TheWiseDocTranslator.git```
 2) ```cd TheWiseDocTranslator```
-4) Copy your custom MMediting installation folder into the project : ```cp -Rf ..../mmediting/ ./```
+4) Copy your custom MMediting installation folder into the project : ```cp -Rf SRC_PATH/mmediting/ ./```
 3) Fix all your parameters on config.yaml 
    such as : **data_folder**, **results_folder**, **dest_lang**, ... 
    
