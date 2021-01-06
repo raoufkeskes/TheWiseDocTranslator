@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="VcsDirectoryMappings">
+    <mapping directory="$PROJECT_DIR$" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/mmediting" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/text_detection" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/text_recognition" vcs="Git" />
+  </component>
+</project>

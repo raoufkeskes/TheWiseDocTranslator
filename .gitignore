@@ -6,6 +6,13 @@ __pycache__/
 # C extensions
 *.so
 
+# pytorch pretrained models
+*.pth
+
+#data and result folder
+data/
+result/
+
 # Distribution / packaging
 .Python
 build/

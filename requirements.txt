@@ -1,0 +1,11 @@
+numpy==1.19.4
+pyyaml==5.3.1
+opencv-python==4.4.0.46
+scikit-image==0.18.1
+scipy==1.5.4
+googletrans==4.0.0rc1
+textblob==0.15.3
+nltk==3.5
+lmdb==1.0.0
+natsort==7.1.0
+pillow==8.0.1

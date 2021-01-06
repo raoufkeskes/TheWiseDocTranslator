@@ -1,0 +1,97 @@
+# You could also use relative paths,
+# but I generally avoid them in confing and constant files
+
+data_folder: "/home/raoufks/Desktop/Projects/TheWiseDocTranslator/data/"
+
+results_folder: "/home/raoufks/Desktop/Projects/TheWiseDocTranslator/result/"
+
+#use GPU or not,
+# V 1.0 : must be TRUE temporarly since we are using mmedit in our pipeline which requires GPU
+cuda: True
+
+# Source language (Not necessary because it is inferable but it could enhance the results)
+src_lang: null
+
+# destination language
+dest_lang: "en"
+
+# translation_service
+translation_service: "Google"
+
+# Font-family file
+font_file_path: "/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf"
+
+# merging word boxes threshold in pixels
+merge_box_th: 18
+same_line_th: 10
+same_block_th: 10
+
+# masking threshold for inpainting in an intelligent way knowing that  0 =< pixels =< 255
+mask_th: 80
+
+Inpainter:
+  pretrained_model: "/home/raoufks/Desktop/Projects/TheWiseDocTranslator/mmediting/weights/deepfillv2_places.pth"
+  configuration: "/home/raoufks/Desktop/Projects/TheWiseDocTranslator/mmediting/configs/inpainting/deepfillv2/deepfillv2_256x256_8x2_places.py"
+
+text_detector:
+  # the path to text detector pytorch pretrained model
+  pretrained_model: "/home/raoufks/Desktop/Projects/TheWiseDocTranslator/text_detection/weights/craft_mlt_25k.pth"
+  # use link refiner for sentense-level datasets
+  refiner_model: "/home/raoufks/Desktop/Projects/TheWiseDocTranslator/text_detection/weights/craft_refiner_CTW1500.pth"
+  # use the refiner or not
+  refine: False
+  # text  detection confidence threshold
+  text_threshold: 0.7
+  # linking chars confidence threshold
+  link_threshold: 0.4
+  # text low-bound score
+  low_text: 0.4
+  # image size for inference
+  canvas_size: 1280
+  # magnification ratio
+  mag_ratio: 1.5
+  # enable polygon type result (for curved text for example)
+  poly: False
+
+text_recognizer:
+  # max word length
+  max_label_len: 25
+  # the height of the input image in our case the word bounding box
+  imgH: 32
+  # the width of the input image in our case the word bounding box
+  imgW: 100
+  # GPU : how many subprocesses to use for data loading
+  workers: 4
+
+  # fixed at 1024 assuming that a document could not bypass 1024 word/page
+  # to make the inference of a whole page in one pass
+  # you could adjust according to your GPU POWER
+  batch_size: 1024
+  # the path to text recognizer pytorch pretrained model
+  pretrained_model: "/home/raoufks/Desktop/Projects/TheWiseDocTranslator/text_recognition/weights/TPS-ResNet-BiLSTM-Attn-case-sensitive.pth"
+  # use rgb model and consider the image as rgb image else grascale image
+  rgb: False
+  # possible characters
+  character: "0123456789abcdefghijklmnopqrstuvwxyz"
+  # case sensitive
+  sensitive: True
+  # whether to keep ratio then pad for image resize
+  pad: False
+  # Transformation stage. None|TPS
+  Transformation: "TPS"
+  # FeatureExtraction stage. VGG|RCNN|ResNet
+  FeatureExtraction: "ResNet"
+  # input_channel for the Feature extractor
+  input_channel: 1
+  # output channel for the the number of output channel of Feature extractor
+  output_channel: 512
+  # SequenceModeling stage. None|BiLSTM
+  SequenceModeling: BiLSTM
+  # the size of the LSTM hidden state
+  hidden_size: 256
+  # Prediction stage. CTC|Attn
+  Prediction: Attn
+  # number of fiducial points of TPS-STN
+  num_fiducial: 20
+
+
