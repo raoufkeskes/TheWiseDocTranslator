@@ -51,7 +51,6 @@ Current working versions are :
 ![alt text](./doc/imgs/res1.png)
 ![alt text](./doc/imgs/res2.png)
 ![alt text](./doc/imgs/res3.png)
-![alt text](./doc/imgs/res4.png)
 
 ## References
 [1] Y. Baek, B. Lee, D. Han, S. Yun, and H. Lee, “Character region awareness for text detec-
